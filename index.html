@@ -1,24 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
 
   <title>Mahmoud Almahmoud | .NET Backend Developer</title>
   <meta
     name="description"
-    content="Online resume of Mahmoud Almahmoud, .NET Backend Developer based in Abu Dhabi, specializing in ASP.NET Core Web API, C#, EF Core, SQL Server, JWT authentication, and Clean Architecture."
+    content="Portfolio of Mahmoud Almahmoud, a .NET Backend Developer in Abu Dhabi specializing in ASP.NET Core Web API, C#, EF Core, SQL Server, JWT authentication, Docker, testing, and Clean Architecture."
   />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <a href="#home" class="logo">Mahmoud Almahmoud</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-      <div class="nav-links">
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Mahmoud Almahmoud home">
+        <img class="logo-photo" src="assets/mahmoud.jpg" alt="Mahmoud Almahmoud photo" width="44" height="44" />
+        <span>Mahmoud Almahmoud</span>
+      </a>
+
+      <button class="menu-btn" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
@@ -26,230 +42,253 @@
         <a href="#contact">Contact</a>
       </div>
 
-      <button id="themeToggle" class="theme-btn" type="button">Dark</button>
+      <button id="themeToggle" class="theme-btn" type="button" aria-label="Switch color theme">Dark</button>
     </nav>
   </header>
 
-  <main>
-    <!-- HERO -->
+  <main id="main">
     <section id="home" class="hero section">
-      <div class="hero-content">
-        <p class="eyebrow">Abu Dhabi, UAE</p>
+      <div class="hero-bg" aria-hidden="true">
+        <span class="orb orb-one"></span>
+        <span class="orb orb-two"></span>
+        <span class="grid-glow"></span>
+      </div>
 
-        <h1>.NET Backend Developer</h1>
+      <div class="hero-content" data-animate>
+        <p class="eyebrow">Abu Dhabi, UAE · Backend Development · IT</p>
+
+        <h1>Building secure, scalable .NET backend systems.</h1>
 
         <p class="headline">
-          Building secure and scalable RESTful APIs using ASP.NET Core, C#,
-          Entity Framework Core, SQL Server, JWT authentication, and Clean Architecture.
+          .NET Backend Developer focused on RESTful APIs, ASP.NET Core, C#, Entity Framework Core,
+          SQL Server, JWT authentication, Clean Architecture, testing, Docker, and reliable backend delivery.
         </p>
 
         <div class="hero-actions">
           <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn secondary" href="Mahmoud-Almahmoud-CV.pdf" target="_blank">Download CV</a>
+          <a class="btn secondary" href="Mahmoud-Almahmoud-CV.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
 
-        <div class="quick-links">
+        <div class="quick-links" aria-label="Profile links">
           <a href="https://github.com/Mahmoud-Almahmoud" target="_blank" rel="noopener">GitHub</a>
           <a href="https://www.linkedin.com/in/mahmoud-almahmoud" target="_blank" rel="noopener">LinkedIn</a>
           <a href="mailto:mmmahmoudd@gmail.com">Email</a>
         </div>
       </div>
 
-      <aside class="hero-card">
-        <h2>Core Focus</h2>
-        <ul>
+      <aside class="hero-card glass-card" data-animate>
+        <p class="card-kicker">Core Focus</p>
+        <h2>.NET Backend</h2>
+        <ul class="check-list">
           <li>ASP.NET Core Web API</li>
           <li>C# Backend Development</li>
           <li>SQL Server & EF Core</li>
           <li>JWT Authentication</li>
           <li>Clean Architecture</li>
-          <li>Docker</li>
+          <li>Docker & Automated Testing</li>
         </ul>
       </aside>
     </section>
 
-    <!-- SUMMARY -->
-    <section class="section">
-      <h2 class="section-title">Professional Summary</h2>
+    <section class="section compact-section" aria-label="Professional highlights">
+      <div class="stats-grid">
+        <article class="stat-card" data-animate>
+          <strong>3+</strong>
+          <span>Years software / IT experience</span>
+        </article>
+        <article class="stat-card" data-animate>
+          <strong>API</strong>
+          <span>Backend-first project portfolio</span>
+        </article>
+        <article class="stat-card" data-animate>
+          <strong>UAE</strong>
+          <span>Available in Abu Dhabi</span>
+        </article>
+      </div>
+    </section>
 
-      <div class="card">
+    <section class="section" data-animate>
+      <div class="section-heading">
+        <p class="eyebrow">Profile</p>
+        <h2 class="section-title">Professional Summary</h2>
+      </div>
+
+      <div class="card rich-card">
         <p>
-          Backend-focused .NET Developer with hands-on experience building RESTful APIs
-          and backend systems using ASP.NET Core, C#, Entity Framework Core, and SQL Server.
-          Skilled in authentication, authorization, database optimization, testing, and clean
-          backend architecture.
+          Backend-focused .NET Developer with hands-on experience building RESTful APIs and backend systems
+          using ASP.NET Core, C#, Entity Framework Core, and SQL Server. Skilled in authentication,
+          authorization, database optimization, testing, and clean backend architecture.
         </p>
       </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills" class="section">
-      <h2 class="section-title">Technical Skills</h2>
+      <div class="section-heading" data-animate>
+        <p class="eyebrow">Technical stack</p>
+        <h2 class="section-title">Skills that match backend roles</h2>
+      </div>
 
       <div class="skills-grid">
-        <div class="skill-card">
+        <article class="skill-card" data-animate>
+          <span class="skill-icon">01</span>
           <h3>Backend</h3>
-          <p>ASP.NET Core Web API, RESTful APIs, Clean Architecture</p>
-        </div>
+          <p>ASP.NET Core Web API, RESTful APIs, Clean Architecture, layered backend design.</p>
+        </article>
 
-        <div class="skill-card">
+        <article class="skill-card" data-animate>
+          <span class="skill-icon">02</span>
           <h3>Programming</h3>
-          <p>C#, Object-Oriented Programming, Debugging, Refactoring</p>
-        </div>
+          <p>C#, OOP, debugging, refactoring, maintainable code, feature development.</p>
+        </article>
 
-        <div class="skill-card">
+        <article class="skill-card" data-animate>
+          <span class="skill-icon">03</span>
           <h3>Database</h3>
-          <p>Entity Framework Core, SQL Server, SQL Query Optimization</p>
-        </div>
+          <p>Entity Framework Core, SQL Server, query optimization, relational data modeling.</p>
+        </article>
 
-        <div class="skill-card">
+        <article class="skill-card" data-animate>
+          <span class="skill-icon">04</span>
           <h3>Security</h3>
-          <p>JWT Authentication, Refresh Tokens, Role-Based Authorization</p>
-        </div>
+          <p>JWT authentication, refresh tokens, role-based authorization, protected endpoints.</p>
+        </article>
 
-        <div class="skill-card">
+        <article class="skill-card" data-animate>
+          <span class="skill-icon">05</span>
           <h3>Testing & DevOps</h3>
-          <p>xUnit, Moq, FluentAssertions, Docker, Docker Compose, GitHub Actions</p>
-        </div>
+          <p>xUnit, Moq, FluentAssertions, Docker, Docker Compose, GitHub Actions.</p>
+        </article>
 
-        <div class="skill-card">
+        <article class="skill-card" data-animate>
+          <span class="skill-icon">06</span>
           <h3>Business</h3>
-          <p>Client Communication, Technical Sales, CRM, Problem Solving</p>
-        </div>
+          <p>Client communication, technical sales, CRM exposure, problem solving.</p>
+        </article>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience" class="section">
-      <h2 class="section-title">Professional Experience</h2>
+      <div class="section-heading" data-animate>
+        <p class="eyebrow">Career path</p>
+        <h2 class="section-title">Professional Experience</h2>
+      </div>
 
       <div class="timeline">
-        <article class="timeline-item">
+        <article class="timeline-item" data-animate>
+          <div class="timeline-marker" aria-hidden="true"></div>
           <div class="timeline-header">
             <div>
               <h3>.NET Web API Developer — Independent Project</h3>
               <p class="meta">Mar 2026 – Present</p>
             </div>
           </div>
-
           <ul>
-             <li>Developed Car Service Booking System, a production-style REST API using ASP.NET Core Web API, C#, Entity Framework Core, and SQL Server.</li>
-    <li>Designed the backend using Clean Architecture across Domain, Application, Infrastructure, and API layers to improve maintainability and scalability.</li>
-    <li>Implemented secure authentication and authorization using JWT tokens, refresh tokens, role-based access control, and protected endpoints.</li>
-    <li>Built backend modules for bookings, vehicles, car services, user profiles, payments, and car lookup hierarchy.</li>
-    <li>Integrated Stripe payments, Hangfire background jobs, Serilog logging, rate limiting, health checks, Docker, and automated testing.</li>
-    <li>Added unit and integration tests using xUnit, FluentAssertions, and Moq to improve code reliability.</li>
+            <li>Developed Car Service Booking System, a production-style REST API using ASP.NET Core Web API, C#, Entity Framework Core, and SQL Server.</li>
+            <li>Designed the backend using Clean Architecture across Domain, Application, Infrastructure, and API layers to improve maintainability and scalability.</li>
+            <li>Implemented JWT tokens, refresh tokens, role-based access control, and protected endpoints.</li>
+            <li>Built backend modules for bookings, vehicles, car services, user profiles, payments, and car lookup hierarchy.</li>
+            <li>Integrated Stripe payments, Hangfire background jobs, Serilog logging, rate limiting, health checks, Docker, and automated testing.</li>
+            <li>Added unit and integration tests using xUnit, FluentAssertions, and Moq to improve reliability.</li>
           </ul>
         </article>
 
-        <article class="timeline-item">
+        <article class="timeline-item" data-animate>
+          <div class="timeline-marker" aria-hidden="true"></div>
           <div class="timeline-header">
             <div>
               <h3>Sales Supervisor — Sharmax Motors, Abu Dhabi</h3>
-              <p class="meta">On-site | Full-time | Jul 2025 – Dec 2025</p>
+              <p class="meta">On-site · Full-time · Jul 2025 – Dec 2025</p>
             </div>
           </div>
-           <ul>
-           <li>Exceeded monthly sales targets by 15–25% through proactive client engagement, follow-ups, and needs-based selling.</li>
-<li>Led and coached the sales team to improve product knowledge, customer handling, closing techniques, and overall performance.</li>
-<li>Built strong client relationships by understanding customer needs, presenting suitable vehicle options, and supporting repeat business.</li>
-<li>Handled customer inquiries, showroom visits, negotiations, and deal-closing support to improve conversion rates.</li>
-<li>Conducted market research to identify customer demand, competitor activity, and new sales opportunities.</li>
-<li>Contributed to revenue growth through effective sales strategies, customer-focused service, and improved product positioning.</li>
+          <ul>
+            <li>Exceeded monthly sales targets by 15–25% through proactive client engagement, follow-ups, and needs-based selling.</li>
+            <li>Led and coached the sales team to improve product knowledge, customer handling, closing techniques, and overall performance.</li>
+            <li>Handled customer inquiries, showroom visits, negotiations, and deal-closing support to improve conversion rates.</li>
+            <li>Conducted market research to identify customer demand, competitor activity, and new sales opportunities.</li>
           </ul>
         </article>
 
-        <article class="timeline-item">
+        <article class="timeline-item" data-animate>
+          <div class="timeline-marker" aria-hidden="true"></div>
           <div class="timeline-header">
             <div>
               <h3>Backend .NET Developer — Ringo Media, Dubai</h3>
-              <p class="meta">Remote | Part-time | Nov 2023 – Oct 2024</p>
+              <p class="meta">Remote · Part-time · Nov 2023 – Oct 2024</p>
             </div>
           </div>
-
           <ul>
             <li>Developed and maintained RESTful APIs using ASP.NET Core, C#, Entity Framework Core, and SQL Server.</li>
-<li>Implemented secure authentication and authorization using JWT tokens and role-based access control.</li>
-<li>Optimized SQL queries and database operations to improve backend performance and response time.</li>
-<li>Debugged, maintained, and enhanced existing systems to improve reliability, stability, and code quality.</li>
-<li>Collaborated remotely with cross-functional teams to analyze requirements, deliver backend features, and resolve technical issues.</li>
-<li>Participated in testing, troubleshooting, and refactoring to support maintainable and scalable backend solutions.</li>
+            <li>Implemented JWT authentication and role-based access control.</li>
+            <li>Optimized SQL queries and database operations to improve backend performance and response time.</li>
+            <li>Collaborated remotely with cross-functional teams to deliver backend features and resolve technical issues.</li>
           </ul>
         </article>
 
-        <article class="timeline-item">
+        <article class="timeline-item" data-animate>
+          <div class="timeline-marker" aria-hidden="true"></div>
           <div class="timeline-header">
             <div>
               <h3>Store Supervisor — Techy, Dubai</h3>
-              <p class="meta">On-site | Full-time | Oct 2023 – Apr 2024</p>
+              <p class="meta">On-site · Full-time · Oct 2023 – Apr 2024</p>
             </div>
           </div>
-           <ul>
-            <li>Achieved and exceeded monthly sales targets through proactive customer engagement, effective product presentation, and follow-up with potential buyers.</li>
-            <li>Built strong customer relationships by understanding client needs, recommending suitable products, and supporting repeat business.</li>
-            <li>Managed daily sales operations, including customer service, sales floor coordination, team support, and performance tracking.</li>
+          <ul>
+            <li>Achieved and exceeded monthly sales targets through customer engagement, product presentation, and follow-up.</li>
+            <li>Managed daily sales operations, customer service, sales floor coordination, team support, and performance tracking.</li>
             <li>Trained and supported sales team members to improve product knowledge, customer handling, and closing techniques.</li>
-            <li>Monitored sales performance, conversion rates, and customer feedback to identify areas for improvement.</li>
-            <li>Contributed to revenue growth by improving customer experience, supporting deal closing, and maintaining smooth store operations.</li>
           </ul>
         </article>
 
-        <article class="timeline-item">
+        <article class="timeline-item" data-animate>
+          <div class="timeline-marker" aria-hidden="true"></div>
           <div class="timeline-header">
             <div>
               <h3>Software Developer — Wandx, Germany</h3>
-              <p class="meta">Remote | Part-time | Sep 2022 – Nov 2023</p>
+              <p class="meta">Remote · Part-time · Sep 2022 – Nov 2023</p>
             </div>
           </div>
           <ul>
-            <li>Analyzed business and system requirements to understand project scope, define technical tasks, and prioritize development work.</li>
-            <li>Designed, developed, and maintained web and desktop applications based on user needs and business requirements.</li>
-            <li>Wrote clean, maintainable code and contributed to application features, bug fixes, and system improvements.</li>
-            <li>Performed testing, debugging, code review, and refactoring to improve application stability, performance, and maintainability.</li>
-            <li>Provided technical support and maintenance throughout the software development lifecycle, including issue investigation and problem resolution.</li>
-            <li>Collaborated remotely with team members to plan tasks, monitor progress, and deliver work within expected timelines.</li>
-            <li>upported project planning by identifying technical risks, managing priorities, and helping ensure smooth development workflow.</li>
+            <li>Designed, developed, and maintained web and desktop applications based on business requirements.</li>
+            <li>Performed testing, debugging, code review, and refactoring to improve application stability and maintainability.</li>
+            <li>Supported project planning by identifying technical risks, managing priorities, and helping ensure smooth workflow.</li>
           </ul>
         </article>
 
-        <article class="timeline-item">
+        <article class="timeline-item" data-animate>
+          <div class="timeline-marker" aria-hidden="true"></div>
           <div class="timeline-header">
             <div>
               <h3>IT Specialist — EdTeC Academy, Germany</h3>
-              <p class="meta">Remote | Full-time | Apr 2022 – Nov 2023</p>
+              <p class="meta">Remote · Full-time · Apr 2022 – Nov 2023</p>
             </div>
           </div>
           <ul>
-            <li>Monitored IT services, systems, and security measures to support stable and secure operations across departments.</li>
-            <li>Troubleshot technical issues and provided remote IT support to employees, including software, system, and access-related problems.</li>
-            <li>Supported the development, maintenance, and updates of the company’s official website.</li>
-            <li>Developed and maintained internal systems and web applications to support daily business operations.</li>
-            <li>Coordinated with vendors and service providers to support IT operations, tools, and technical requirements.</li>
-            <li>Assisted in managing IT resources, priorities, and technical tasks to ensure smooth workflow and service continuity.</li>
+            <li>Monitored IT services, systems, and security measures to support stable and secure operations.</li>
+            <li>Troubleshot technical issues and provided remote IT support to employees.</li>
+            <li>Supported development, maintenance, and updates for the company website and internal systems.</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="section">
-      <h2 class="section-title">Featured Project</h2>
+      <div class="section-heading" data-animate>
+        <p class="eyebrow">Featured work</p>
+        <h2 class="section-title">Project built for backend portfolio proof</h2>
+      </div>
 
-      <article class="project-card">
-        <div>
+      <article class="project-card" data-animate>
+        <div class="project-content">
           <p class="eyebrow">ASP.NET Core Web API</p>
           <h3>Car Service Booking System API</h3>
-
           <p>
-            A production-style backend REST API for managing car service bookings, built with
-    ASP.NET Core Web API, C#, Entity Framework Core, and SQL Server. The project follows
-    Clean Architecture principles and includes secure JWT authentication, refresh tokens,
-    role-based authorization, Stripe payment integration, Hangfire background jobs,
-    Serilog logging, Docker support, rate limiting, health checks, and automated testing.
+            A production-style backend REST API for managing car service bookings. It follows Clean Architecture
+            and includes secure JWT authentication, refresh tokens, role-based authorization, Stripe payments,
+            Hangfire jobs, Serilog logging, Docker support, rate limiting, health checks, and automated testing.
           </p>
 
-          <div class="tags">
-           <span>ASP.NET Core</span>
+          <div class="tags" aria-label="Project technologies">
+            <span>ASP.NET Core</span>
             <span>C#</span>
             <span>EF Core</span>
             <span>SQL Server</span>
@@ -260,50 +299,54 @@
           </div>
         </div>
 
-        <a class="btn primary" href="https://github.com/Mahmoud-Almahmoud/CarServiceBookingSystem" target="_blank" rel="noopener">
-          View Repository
-        </a>
+        <div class="project-panel">
+          <div class="panel-line"><span>Status</span><strong>Portfolio Ready</strong></div>
+          <div class="panel-line"><span>Type</span><strong>Backend API</strong></div>
+          <div class="panel-line"><span>Focus</span><strong>Production-style</strong></div>
+          <a class="btn primary full" href="https://github.com/Mahmoud-Almahmoud/CarServiceBookingSystem" target="_blank" rel="noopener">
+            View Repository
+          </a>
+        </div>
       </article>
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education" class="section">
-      <h2 class="section-title">Education</h2>
-
-      <div class="card split">
+    <section id="education" class="section two-column-section">
+      <div class="card split-card" data-animate>
         <div>
-          <h3>BSc in Software and Information Systems Engineering</h3>
+          <p class="eyebrow">Education</p>
+          <h2>BSc in Software and Information Systems Engineering</h2>
           <p>Syria</p>
         </div>
         <p class="meta">2016 – 2021</p>
       </div>
-    </section>
 
-    <!-- LANGUAGES -->
-    <section class="section">
-      <h2 class="section-title">Languages</h2>
-
-      <div class="card">
-        <p>Arabic: Native | English: Professional</p>
+      <div class="card split-card" data-animate>
+        <div>
+          <p class="eyebrow">Languages</p>
+          <h2>Arabic & English</h2>
+          <p>Arabic: Native · English: Professional</p>
+        </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section contact-section">
-      <h2 class="section-title">Contact</h2>
+      <div class="section-heading center" data-animate>
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Open to .NET Backend, IT, and hybrid technical roles</h2>
+      </div>
 
       <div class="contact-grid">
-        <a class="contact-card" href="mailto:your-email@example.com">
+        <a class="contact-card" href="mailto:mmmahmoudd@gmail.com" data-animate>
           <span>Email</span>
           <strong>mmmahmoudd@gmail.com</strong>
         </a>
 
-        <a class="contact-card" href="https://github.com/Mahmoud-Almahmoud" target="_blank" rel="noopener">
+        <a class="contact-card" href="https://github.com/Mahmoud-Almahmoud" target="_blank" rel="noopener" data-animate>
           <span>GitHub</span>
           <strong>github.com/Mahmoud-Almahmoud</strong>
         </a>
 
-        <a class="contact-card" href="https://www.linkedin.com/in/mahmoud-almahmoud" target="_blank" rel="noopener">
+        <a class="contact-card" href="https://www.linkedin.com/in/mahmoud-almahmoud" target="_blank" rel="noopener" data-animate>
           <span>LinkedIn</span>
           <strong>linkedin.com/in/mahmoud-almahmoud</strong>
         </a>
@@ -313,6 +356,7 @@
 
   <footer class="footer">
     <p>© <span id="year"></span> Mahmoud Almahmoud. All rights reserved.</p>
+    <a href="#home">Back to top</a>
   </footer>
 
   <script src="script.js"></script>
